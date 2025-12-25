@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sadiqstore.controller.AddProductController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <children>
+      <Label text="Add New Product">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      
+      <TextField fx:id="nameField" promptText="Product Name" />
+      <TextArea fx:id="descField" prefHeight="60.0" promptText="Description (Optional)" />
+      
+      <TextField fx:id="qtyField" promptText="Quantity (e.g., 10)" />
+      <TextField fx:id="costField" promptText="Cost Price (e.g., 500)" />
+      <TextField fx:id="priceField" promptText="Selling Price (e.g., 750)" />
+
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#closeWindow" style="-fx-background-color: #6c757d; -fx-text-fill: white;" text="Cancel / Back">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <VBox.margin>
+                <Insets top="5.0" />
+            </VBox.margin>
+            </Button>
+
+      
+      <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#saveProduct" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Save Product">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Button>
+      <Label fx:id="statusLabel" textFill="RED" />
+   </children>
+</VBox>

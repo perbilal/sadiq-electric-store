@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+   <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sadiqstore.controller.DashboardController">
+  <left>
+      <VBox prefHeight="600.0" prefWidth="220.0" spacing="10.0" style="-fx-background-color: #2c3e50;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#showHome" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Sadiq Store" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+            
+            <Button mnemonicParsing="false" onAction="#showInventory" prefWidth="220.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: BASELINE_LEFT; -fx-cursor: hand;" text="📦 Inventory">
+               <font><Font size="16.0" /></font>
+               <padding><Insets bottom="15.0" left="20.0" top="15.0" /></padding>
+            </Button>
+
+            <Button mnemonicParsing="false" onAction="#showProfit" prefWidth="220.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: BASELINE_LEFT; -fx-cursor: hand;" text="📈 Profit &amp; Loss">
+               <font><Font size="16.0" /></font>
+               <padding><Insets bottom="15.0" left="20.0" top="15.0" /></padding>
+            </Button>
+
+                        <Button mnemonicParsing="false" onAction="#showInvoice" prefWidth="220.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: BASELINE_LEFT; -fx-cursor: hand;" text="📄 New Invoice">
+               <font><Font size="16.0" /></font>
+               <padding><Insets bottom="15.0" left="20.0" top="15.0" /></padding>
+            </Button>
+            
+            <Button mnemonicParsing="false" onAction="#showHistory" prefWidth="220.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: BASELINE_LEFT; -fx-cursor: hand;" text="📜 Sales History">
+                        <font><Font size="16.0" /></font>
+                        <padding><Insets bottom="15.0" left="20.0" top="15.0" /></padding>
+             </Button>
+
+            <Button mnemonicParsing="false" onAction="#showCustomers" prefWidth="220.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: BASELINE_LEFT; -fx-cursor: hand;" text="👥 Customers">
+               <font><Font size="16.0" /></font>
+               <padding><Insets bottom="15.0" left="20.0" top="15.0" /></padding>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   
+  <center>
+      <VBox alignment="CENTER" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Sadiq Electric Store - Overview" textFill="#2c3e50">
+               <font><Font name="System Bold" size="28.0" /></font>
+            </Label>
+            
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #007bff; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+                     <children>
+                        <Label fx:id="totalProductsLabel" text="0" textFill="WHITE">
+                           <font><Font name="System Bold" size="40.0" /></font>
+                        </Label>
+                        <Label text="Total Products" textFill="WHITE">
+                           <font><Font size="16.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  
+                  <VBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #dc3545; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+                     <children>
+                        <Label fx:id="lowStockLabel" text="0" textFill="WHITE">
+                           <font><Font name="System Bold" size="40.0" /></font>
+                        </Label>
+                        <Label text="Low Stock Items" textFill="WHITE">
+                           <font><Font size="16.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  
+                  <VBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #28a745; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+                     <children>
+                        <Label fx:id="todaySalesLabel" text="0" textFill="WHITE">
+                           <font><Font name="System Bold" size="40.0" /></font>
+                        </Label>
+                        <Label text="Invoices Today" textFill="WHITE">
+                           <font><Font size="16.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            
+            <Button onAction="#refreshStats" text="🔄 Refresh Stats" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
